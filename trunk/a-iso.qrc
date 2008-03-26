@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>images/Acetino2.png</file>
+        <file>images/db.png</file>
+        <file>images/mount.png</file>
+        <file>images/play.png</file>
+    </qresource>
+</RCC>
