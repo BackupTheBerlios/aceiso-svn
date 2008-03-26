@@ -63,6 +63,7 @@ void zzofiga();
    void uncompress();
    void printOutuncompress(int, QProcess::ExitStatus);
    void printOutcompress(int, QProcess::ExitStatus);
+   void gencue();
 
 private slots:
    // void setCompleted();

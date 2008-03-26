@@ -24,6 +24,7 @@
 #include "sources/a_encrypt.h"
 #include "sources/a_decrypt.h"
 #include "sources/a_compress.h"
+#include "sources/a_gencue.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -141,22 +142,23 @@ void MainWindow::setupMenus()
        QAction *aboutAction = helpMenu->addAction(tr("About"));
 
 
-    connect(exitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
-    connect(mountAction, SIGNAL( triggered() ), this, SLOT( gmount() ) );
-    connect(umountAction, SIGNAL( triggered() ), this, SLOT( gumount() ));
-    connect(md5Action, SIGNAL( triggered() ), this, SLOT( md5generate() ));
-    connect(md5CheckAction, SIGNAL( triggered() ), this, SLOT( md5check() ));
-    connect(splitAction, SIGNAL( triggered() ), this, SLOT( split() ));
-    connect(mergeAction, SIGNAL( triggered() ), this, SLOT( merge() ));
-    connect(isofromfolderAction, SIGNAL( triggered() ), this, SLOT( foldertoiso() ) );
-    connect(aboutAction, SIGNAL( triggered() ), this, SLOT( about() ) );
+    connect( exitAction,   SIGNAL(triggered()), qApp, SLOT(quit()));
+    connect( mountAction,  SIGNAL( triggered() ), this, SLOT( gmount() ) );
+    connect( umountAction, SIGNAL( triggered() ), this, SLOT( gumount() ));
+    connect( md5Action,    SIGNAL( triggered() ), this, SLOT( md5generate() ));
+    connect( md5CheckAction, SIGNAL( triggered() ), this, SLOT( md5check() ));
+    connect( splitAction,   SIGNAL( triggered() ), this, SLOT( split() ));
+    connect( mergeAction,   SIGNAL( triggered() ), this, SLOT( merge() ));
+    connect( isofromfolderAction, SIGNAL( triggered() ), this, SLOT( foldertoiso() ) );
+    connect( aboutAction,   SIGNAL( triggered() ), this, SLOT( about() ) );
     connect( imgtoisoAction, SIGNAL( triggered() ), this, SLOT( converter() ) );
-    connect( macosAction, SIGNAL( triggered() ), this, SLOT( macimg() ) );
+    connect( macosAction,   SIGNAL( triggered() ), this, SLOT( macimg() ) );
     connect( extractAction, SIGNAL( triggered() ), this, SLOT( extract() ) );
     connect( encryptAction, SIGNAL( triggered() ), this, SLOT( encrypt() ) );
     connect( decryptAction, SIGNAL( triggered() ), this, SLOT( decrypt() ) );
-    connect( compressAction, SIGNAL( triggered() ), this, SLOT( compress() ) );
+    connect( compressAction,   SIGNAL( triggered() ), this, SLOT( compress() ) );
     connect( uncompressAction, SIGNAL( triggered() ), this, SLOT( uncompress() ) );
+    connect( gencueAction,     SIGNAL( triggered() ), this, SLOT( gencue() ) );
 
 }
 
