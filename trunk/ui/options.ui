@@ -1,0 +1,178 @@
+<ui version="4.0" >
+ <class>options</class>
+ <widget class="QDialog" name="options" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>346</width>
+    <height>314</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>A-ISO::Options</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../a-iso.qrc" >:/images/Acetino2.png</iconset>
+  </property>
+  <layout class="QGridLayout" >
+   <item row="0" column="0" colspan="2" >
+    <widget class="QToolBox" name="toolBox" >
+     <property name="currentIndex" >
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page" >
+      <property name="geometry" >
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>328</width>
+        <height>169</height>
+       </rect>
+      </property>
+      <attribute name="label" >
+       <string>Iso from folder</string>
+      </attribute>
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
+        <widget class="QRadioButton" name="radioButton_5" >
+         <property name="toolTip" >
+          <string/>
+         </property>
+         <property name="text" >
+          <string>Standard Settings</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="QRadioButton" name="radioButton_6" >
+         <property name="toolTip" >
+          <string>will let you add an ID to the ISO</string>
+         </property>
+         <property name="text" >
+          <string>User Settings</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_2" >
+      <property name="geometry" >
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>96</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <attribute name="label" >
+       <string>Media player</string>
+      </attribute>
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
+        <widget class="QRadioButton" name="radioButton_7" >
+         <property name="text" >
+          <string>Kaffeine</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="QRadioButton" name="radioButton_8" >
+         <property name="text" >
+          <string>Vlc</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" >
+        <widget class="QRadioButton" name="radioButton" >
+         <property name="text" >
+          <string>SMPlayer</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_3" >
+      <property name="geometry" >
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>94</width>
+        <height>62</height>
+       </rect>
+      </property>
+      <attribute name="label" >
+       <string>File manager</string>
+      </attribute>
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
+        <widget class="QRadioButton" name="radioButton_9" >
+         <property name="toolTip" >
+          <string>it will use kde's default file manager</string>
+         </property>
+         <property name="text" >
+          <string>Kde</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="QRadioButton" name="radioButton_10" >
+         <property name="toolTip" >
+          <string>it will use Nautilus file manager</string>
+         </property>
+         <property name="text" >
+          <string>Nautilus</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="1" column="0" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>251</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="1" >
+    <widget class="QPushButton" name="exit_button" >
+     <property name="text" >
+      <string>ok</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../a-iso.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>exit_button</sender>
+   <signal>clicked()</signal>
+   <receiver>options</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>427</x>
+     <y>274</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>247</x>
+     <y>146</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

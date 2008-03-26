@@ -26,6 +26,7 @@
 #include "sources/a_compress.h"
 #include "sources/a_gencue.h"
 #include "sources/a_isocd.h"
+#include "sources/options.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -164,6 +165,7 @@ void MainWindow::setupMenus()
     connect( uncompressAction, SIGNAL( triggered() ), this, SLOT( uncompress() ) );
     connect( gencueAction,     SIGNAL( triggered() ), this, SLOT( gencue() ) );
     connect( gencdAction,      SIGNAL( triggered() ), this, SLOT( isocd() ) );
+    connect( optionsAction,    SIGNAL( triggered() ), this, SLOT( options() ) );
 }
 
 
@@ -339,5 +341,10 @@ void MainWindow::about()
 	abt->exec();
 }
 
+void MainWindow::options()
+{
+	optionsDiag *opt=new optionsDiag;
+	opt->exec();
+}
 
 

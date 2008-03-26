@@ -66,6 +66,7 @@ void zzofiga();
    void gencue();
    void isocd();
    void printOutisofromcd(int, QProcess::ExitStatus);
+   void options();
 
 private slots:
    // void setCompleted();
