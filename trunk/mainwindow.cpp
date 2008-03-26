@@ -27,6 +27,7 @@
 #include "sources/a_gencue.h"
 #include "sources/a_isocd.h"
 #include "sources/options.h"
+#include "sources/manual.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -166,6 +167,8 @@ void MainWindow::setupMenus()
     connect( gencueAction,     SIGNAL( triggered() ), this, SLOT( gencue() ) );
     connect( gencdAction,      SIGNAL( triggered() ), this, SLOT( isocd() ) );
     connect( optionsAction,    SIGNAL( triggered() ), this, SLOT( options() ) );
+    connect( manualAction,     SIGNAL( triggered() ), this, SLOT( manual() ) );
+
 }
 
 
@@ -345,6 +348,13 @@ void MainWindow::options()
 {
 	optionsDiag *opt=new optionsDiag;
 	opt->exec();
+}
+
+
+void MainWindow::manual()
+{
+	manualDiag *man=new manualDiag;
+	man->exec();
 }
 
 

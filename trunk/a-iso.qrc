@@ -4,5 +4,10 @@
         <file>images/db.png</file>
         <file>images/mount.png</file>
         <file>images/play.png</file>
+	<file>manual/acetino2.png</file>
+	<file>manual/manual.html</file>
+	<file>manual/page2.html</file>
+	<file>manual/page3.html</file>
+	<file>manual/page4.html</file>
     </qresource>
 </RCC>
