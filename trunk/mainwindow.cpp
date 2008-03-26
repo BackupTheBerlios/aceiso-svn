@@ -23,7 +23,7 @@
 #include "sources/a_mdatabase.h"
 #include "sources/a_encrypt.h"
 #include "sources/a_decrypt.h"
-
+#include "sources/a_compress.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -54,6 +54,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect( &GPg, SIGNAL(finished(int, QProcess::ExitStatus)), this,SLOT( closeProg() ) );
     connect( &GPg, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(printOutgpg(int, QProcess::ExitStatus)));
+
+    connect( &PZipuncompress, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT( closeProg() ));
+    connect( &PZipuncompress, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(printOutuncompress(int, QProcess::ExitStatus)));
+
+    connect( &PZip, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT( closeProg() ));
+    connect( &PZip, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(printOutcompress(int, QProcess::ExitStatus)));
 
     initial_get_database();
 }
@@ -149,6 +155,9 @@ void MainWindow::setupMenus()
     connect( extractAction, SIGNAL( triggered() ), this, SLOT( extract() ) );
     connect( encryptAction, SIGNAL( triggered() ), this, SLOT( encrypt() ) );
     connect( decryptAction, SIGNAL( triggered() ), this, SLOT( decrypt() ) );
+    connect( compressAction, SIGNAL( triggered() ), this, SLOT( compress() ) );
+    connect( uncompressAction, SIGNAL( triggered() ), this, SLOT( uncompress() ) );
+
 }
 
 
@@ -249,6 +258,7 @@ frame -> setLayout( verticalLayout );
    connect( databaseAction, SIGNAL ( triggered() ), frame4, SLOT (show()));
    connect( databaseAction, SIGNAL ( triggered() ), frame5, SLOT (hide()));
    connect( databaseAction, SIGNAL ( triggered() ), dvdLabel, SLOT (hide()));
+   connect( databaseAction, SIGNAL ( triggered() ), this, SLOT (initial_get_database()));//UPDATE DATABASE WHEN CLICK THE DB TOOLBUTTON
 
    connect( PlayAction, SIGNAL ( triggered() ), mntWidget, SLOT (hide()));
    connect( PlayAction, SIGNAL ( triggered() ), frame3, SLOT (hide()));

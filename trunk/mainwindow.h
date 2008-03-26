@@ -59,6 +59,10 @@ void zzofiga();
    void encrypt();
    void decrypt();
    void printOutgpg(int, QProcess::ExitStatus);
+   void compress();
+   void uncompress();
+   void printOutuncompress(int, QProcess::ExitStatus);
+   void printOutcompress(int, QProcess::ExitStatus);
 
 private slots:
    // void setCompleted();
@@ -81,6 +85,8 @@ private:
    QProcess TAr;
    QProcess MAcimg;
    QProcess GPg;
+   QProcess PZipuncompress;
+   QProcess PZip;
     //QPixmap puzzleImage;
    // PiecesList *piecesList;
    // PuzzleWidget *puzzleWidget;
