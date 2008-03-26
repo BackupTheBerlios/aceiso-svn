@@ -1,15 +1,15 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'about.h~'
+** Meta object code from reading C++ file 'about.h'
 **
-** Created: Wed Mar 26 00:56:09 2008
+** Created: Wed Mar 26 20:42:40 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.3.4)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../sources/about.h~"
+#include "../sources/about.h"
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'about.h~' doesn't include <QObject>."
+#error "The header file 'about.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 59
 #error "This file was generated using the moc from 4.3.4. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -48,8 +48,6 @@ void *aboutDiag::qt_metacast(const char *_clname)
     if (!_clname) return 0;
     if (!strcmp(_clname, qt_meta_stringdata_aboutDiag))
 	return static_cast<void*>(const_cast< aboutDiag*>(this));
-    if (!strcmp(_clname, "Ui::about"))
-	return static_cast< Ui::about*>(const_cast< aboutDiag*>(this));
     return QDialog::qt_metacast(_clname);
 }
 
