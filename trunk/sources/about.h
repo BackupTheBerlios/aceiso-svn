@@ -2,18 +2,17 @@
 #define ABOUT_H
 //
 #include <QDialog>
-#include <QtGui>
+#include "../build/ui_about.h"
 //
-class aboutDiag : public QDialog//, public Ui::about
+class aboutDiag : public QDialog, public Ui::about
 {
 Q_OBJECT
 public:
 	aboutDiag( QWidget * parent = 0, Qt::WFlags f = 0 );
-
-private:
-   void setupWidgets();
-
 };
 #endif
+
+
+
 
 

@@ -13,7 +13,8 @@ OBJECTS_DIR = build
 MOC_DIR = build
 UI_DIR = build
 
-FORMS += ui/options.ui
+FORMS += ui/options.ui \
+         ui/about.ui
 
 #wince*: {
 #   addFile.sources = example.jpg
