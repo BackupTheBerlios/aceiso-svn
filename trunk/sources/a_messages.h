@@ -78,16 +78,16 @@ void MainWindow::printOutsplit(int, QProcess::ExitStatus)
 	}
 
 
-/*void MainWindow::printOutgpg(int, QProcess::ExitStatus)
+void MainWindow::printOutgpg(int, QProcess::ExitStatus)
 	{
 	int valore_uscita = GPg.exitCode();
 	if(valore_uscita == 0)
-	QMessageBox::information(this, "AcetoneISO2",tr("Operation succesfully finished!"));
+	QMessageBox::information(this, "A-ISO",tr("Operation succesfully finished!"));
 	else
-	QMessageBox::critical(this, "AcetoneISO2","Process Error Code: " + QString::number(valore_uscita) );
+	QMessageBox::critical(this, "A-ISO","Process Error Code: " + QString::number(valore_uscita) );
 	}
 
-
+/*
 void MainWindow::printOutfuseiso(int, QProcess::ExitStatus)
 	{
 	int valore_uscita = FUse.exitCode();

@@ -56,6 +56,9 @@ void zzofiga();
    void mdatabase(QListWidgetItem *item);
    void printOut(int, QProcess::ExitStatus);
    void remove_fromDatabase();
+   void encrypt();
+   void decrypt();
+   void printOutgpg(int, QProcess::ExitStatus);
 
 private slots:
    // void setCompleted();
@@ -77,6 +80,7 @@ private:
    QProcess WGet;
    QProcess TAr;
    QProcess MAcimg;
+   QProcess GPg;
     //QPixmap puzzleImage;
    // PiecesList *piecesList;
    // PuzzleWidget *puzzleWidget;

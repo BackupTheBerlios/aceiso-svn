@@ -21,6 +21,8 @@
 #include "sources/a_macimg.h"
 #include "sources/a_extract.h"
 #include "sources/a_mdatabase.h"
+#include "sources/a_encrypt.h"
+#include "sources/a_decrypt.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -49,6 +51,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect( &POweriso, SIGNAL(finished(int, QProcess::ExitStatus)), this,SLOT( closeProg() ) );
     connect( &POweriso, SIGNAL(finished(int, QProcess::ExitStatus)), this,SLOT( message_extract_finish() ) );
+
+    connect( &GPg, SIGNAL(finished(int, QProcess::ExitStatus)), this,SLOT( closeProg() ) );
+    connect( &GPg, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(printOutgpg(int, QProcess::ExitStatus)));
 
     initial_get_database();
 }
@@ -142,6 +147,8 @@ void MainWindow::setupMenus()
     connect( imgtoisoAction, SIGNAL( triggered() ), this, SLOT( converter() ) );
     connect( macosAction, SIGNAL( triggered() ), this, SLOT( macimg() ) );
     connect( extractAction, SIGNAL( triggered() ), this, SLOT( extract() ) );
+    connect( encryptAction, SIGNAL( triggered() ), this, SLOT( encrypt() ) );
+    connect( decryptAction, SIGNAL( triggered() ), this, SLOT( decrypt() ) );
 }
 
 
