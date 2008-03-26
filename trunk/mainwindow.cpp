@@ -25,6 +25,7 @@
 #include "sources/a_decrypt.h"
 #include "sources/a_compress.h"
 #include "sources/a_gencue.h"
+#include "sources/a_isocd.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -62,6 +63,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect( &PZip, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT( closeProg() ));
     connect( &PZip, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(printOutcompress(int, QProcess::ExitStatus)));
 
+    connect( &DD, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT( closeProg() ));
+    connect( &DD, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(printOutisofromcd(int, QProcess::ExitStatus)));
+
     initial_get_database();
 }
 
@@ -94,7 +98,7 @@ void MainWindow::setupMenus()
        optionsAction->setShortcut(QKeySequence(tr("Ctrl+O")));
 
        QMenu *recentMenu = fileMenu->addMenu(tr("&Recently mounted images"));
-
+       fileMenu->addSeparator();
        QAction *exitAction = fileMenu->addAction(tr("E&xit"));
        exitAction->setShortcut(QKeySequence(tr("Ctrl+Q")));
 
@@ -159,7 +163,7 @@ void MainWindow::setupMenus()
     connect( compressAction,   SIGNAL( triggered() ), this, SLOT( compress() ) );
     connect( uncompressAction, SIGNAL( triggered() ), this, SLOT( uncompress() ) );
     connect( gencueAction,     SIGNAL( triggered() ), this, SLOT( gencue() ) );
-
+    connect( gencdAction,      SIGNAL( triggered() ), this, SLOT( isocd() ) );
 }
 
 

@@ -64,6 +64,8 @@ void zzofiga();
    void printOutuncompress(int, QProcess::ExitStatus);
    void printOutcompress(int, QProcess::ExitStatus);
    void gencue();
+   void isocd();
+   void printOutisofromcd(int, QProcess::ExitStatus);
 
 private slots:
    // void setCompleted();
@@ -88,6 +90,7 @@ private:
    QProcess GPg;
    QProcess PZipuncompress;
    QProcess PZip;
+   QProcess DD;
     //QPixmap puzzleImage;
    // PiecesList *piecesList;
    // PuzzleWidget *puzzleWidget;
