@@ -28,6 +28,7 @@
 #include "sources/a_isocd.h"
 #include "sources/options.h"
 #include "sources/manual.h"
+#include "sources/a_psxrip.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -67,6 +68,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect( &DD, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT( closeProg() ));
     connect( &DD, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(printOutisofromcd(int, QProcess::ExitStatus)));
+
+    connect( &PSxrip, SIGNAL(finished(int, QProcess::ExitStatus)), this,SLOT( closeProg() ) );
+    connect( &PSxrip, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(printOutpsx(int, QProcess::ExitStatus)));
 
     initial_get_database();
 }
@@ -168,6 +172,7 @@ void MainWindow::setupMenus()
     connect( gencdAction,      SIGNAL( triggered() ), this, SLOT( isocd() ) );
     connect( optionsAction,    SIGNAL( triggered() ), this, SLOT( options() ) );
     connect( manualAction,     SIGNAL( triggered() ), this, SLOT( manual() ) );
+    connect( psxripAction,     SIGNAL( triggered() ), this, SLOT( psxrip() ) );
 
 }
 

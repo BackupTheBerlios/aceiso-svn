@@ -68,6 +68,7 @@ void zzofiga();
    void printOutisofromcd(int, QProcess::ExitStatus);
    void options();
    void manual();
+   void psxrip();
 
 private slots:
    // void setCompleted();
@@ -93,6 +94,8 @@ private:
    QProcess PZipuncompress;
    QProcess PZip;
    QProcess DD;
+   QProcess UMountcdrom;
+   QProcess PSxrip;
     //QPixmap puzzleImage;
    // PiecesList *piecesList;
    // PuzzleWidget *puzzleWidget;
