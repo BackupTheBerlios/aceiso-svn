@@ -7,17 +7,17 @@ void MainWindow::printOut(int, QProcess::ExitStatus)
 	QMessageBox::critical(this, "A-ISO","Process Error Code: " + QString::number(valore_uscita) );
 	}
 
-/*
+
 void MainWindow::printOutpsx(int, QProcess::ExitStatus)
 	{
 	int valore_uscita = PSxrip.exitCode();
 	if(valore_uscita == 0)
-	QMessageBox::information(this, "AcetoneISO2",tr("Process Succesfully Finished!"));
+	QMessageBox::information(this, "A-ISO",tr("Process Succesfully Finished!"));
 	else
-	QMessageBox::critical(this, "AcetoneISO2","Process Error Code: " + QString::number(valore_uscita) );
+	QMessageBox::critical(this, "A-ISO","Process Error Code: " + QString::number(valore_uscita) );
 	}
 
-*/
+
 void MainWindow::printOutisofromcd(int, QProcess::ExitStatus)
 	{
 	int valore_uscita = DD.exitCode();
@@ -27,17 +27,17 @@ void MainWindow::printOutisofromcd(int, QProcess::ExitStatus)
 	QMessageBox::critical(this, "A-ISO","Process Error Code: " + QString::number(valore_uscita) );
 	}
 
-/*
+
 void MainWindow::printOutbackaudio(int, QProcess::ExitStatus)
 	{
 	int valore_uscita = BAckaudio.exitCode();
 	if( valore_uscita == 0 )
-	QMessageBox::information(this, "AcetoneISO2",tr("Process Succesfully Finished!"));
+	QMessageBox::information(this, "A-ISO",tr("Process Succesfully Finished!"));
 	else
-	QMessageBox::critical(this, "AcetoneISO2","Process Error Code: " + QString::number(valore_uscita) );
+	QMessageBox::critical(this, "A-ISO","Process Error Code: " + QString::number(valore_uscita) );
 	}
 
-*/
+
 void MainWindow::printOutcompress(int, QProcess::ExitStatus)
 	{
 	int valore_uscita = PZip.exitCode();

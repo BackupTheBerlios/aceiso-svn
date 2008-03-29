@@ -70,6 +70,9 @@ void zzofiga();
    void manual();
    void psxrip();
    void backupaudio();
+   void eltorito();
+   void printOutpsx(int, QProcess::ExitStatus);
+   void printOutbackaudio(int, QProcess::ExitStatus);
 
 private slots:
    // void setCompleted();
