@@ -69,6 +69,7 @@ void zzofiga();
    void options();
    void manual();
    void psxrip();
+   void backupaudio();
 
 private slots:
    // void setCompleted();
@@ -96,6 +97,7 @@ private:
    QProcess DD;
    QProcess UMountcdrom;
    QProcess PSxrip;
+   QProcess BAckaudio;
     //QPixmap puzzleImage;
    // PiecesList *piecesList;
    // PuzzleWidget *puzzleWidget;

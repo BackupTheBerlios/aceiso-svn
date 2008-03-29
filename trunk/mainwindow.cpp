@@ -29,6 +29,7 @@
 #include "sources/options.h"
 #include "sources/manual.h"
 #include "sources/a_psxrip.h"
+#include "sources/a_backup_audio.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -173,6 +174,7 @@ void MainWindow::setupMenus()
     connect( optionsAction,    SIGNAL( triggered() ), this, SLOT( options() ) );
     connect( manualAction,     SIGNAL( triggered() ), this, SLOT( manual() ) );
     connect( psxripAction,     SIGNAL( triggered() ), this, SLOT( psxrip() ) );
+    connect( bkaudioAction,     SIGNAL( triggered() ), this, SLOT( backupaudio() ) );
 
 }
 
