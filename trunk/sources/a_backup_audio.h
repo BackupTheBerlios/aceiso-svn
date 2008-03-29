@@ -7,10 +7,10 @@ cdrdao.setFileName("cdrdao");
 
 if (cdrdao.exists())
 	{
-QMessageBox::warning(this, "AcetoneISO2::Warning!",tr("Please note this utility will generate a BIN image which could not be mounted or read in any way . \nHowever You can burn it later with AcetoneISO2 using Burn TOC utility(to be implemented in a future release) ."));
+QMessageBox::warning(this, "A-ISO::Warning!",tr("Please note this utility will generate a BIN image which could not be mounted or read in any way . \nHowever You can burn it later with A-ISO using Burn TOC utility(to be implemented in a future release) ."));
  QDir Home = QDir::home();
-		 	QString fileName = QFileDialog::getSaveFileName(this, tr("AcetoneISO2::Save BIN Audio file"),
-										Home.path() + "/Acetone_Audio",
+		 	QString fileName = QFileDialog::getSaveFileName(this, tr("A-ISO::Save BIN Audio file"),
+										Home.path() + "/aiso_Audio",
 										tr("Images (*.bin)"));
 
 			
@@ -29,5 +29,5 @@ BAckaudio.start("cdrdao",QStringList()  << "read-cd" << "--datafile" << filebin 
 
 	}
 else
-QMessageBox::warning(this, "AcetoneISO2::Warning!",tr("no cdrdao found in /usr/bin"));
+QMessageBox::warning(this, "A-ISO::Warning!",tr("no cdrdao found in /usr/bin"));
 } 
