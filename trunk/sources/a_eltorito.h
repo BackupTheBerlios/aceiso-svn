@@ -1,3 +1,5 @@
+//TODO:RIVEDERE BENE QUESTA FUNZIONE CHE NON VA BENE.
+
 void MainWindow::eltorito()
 {
 QFile stage2_eltorito( "/usr/lib/grub/x86_64-pc/stage2_eltorito" );//TODO:vedi sto problema tra architetture...( "/usr/lib/grub/i386-pc/stage2_eltorito" );
