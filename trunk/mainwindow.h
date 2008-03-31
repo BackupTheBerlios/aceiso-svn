@@ -41,7 +41,6 @@ public slots:
    void printOutsplit(int,QProcess::ExitStatus);
    void printOutMACIMG(int, QProcess::ExitStatus);
    void message_extract_finish();
-void zzofiga();
    void initial_get_database();
    void database();
    void foldertoiso();
@@ -83,6 +82,7 @@ void zzofiga();
    void display_cover();
    void printOutcue(int, QProcess::ExitStatus);
    void mergeMSG(int, QProcess::ExitStatus);
+   void pluginFunction();
 
 private slots:
 

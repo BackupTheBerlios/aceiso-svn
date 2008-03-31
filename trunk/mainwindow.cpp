@@ -360,15 +360,15 @@ QStringList pluginList = Home.entryList(QDir::Files); //dopo metto QDir::Executa
 int s = pluginList.size();
 int n;
 for( n = 0; n < s ; ++n) {
-     pluginsMenu->addAction(pluginList[n], this, SLOT(zzofiga()));
+     pluginsMenu->addAction((pluginList[n]), this, SLOT(pluginFunction()));
    }
-
-
 }
 
-void MainWindow::zzofiga()
+void MainWindow::pluginFunction()
 {
-system("/home/hotbird/.acetoneiso/plugins/Amount");
+QDir Home = QDir::home();
+QProcess porc;
+porc.startDetached(Home.path() + "/.acetoneiso/plugins/Amount");
 }
 
 void MainWindow::about()
