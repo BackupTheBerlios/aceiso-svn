@@ -81,6 +81,8 @@ void zzofiga();
    void get_cover();
    void readXML();
    void display_cover();
+   void printOutcue(int, QProcess::ExitStatus);
+   void mergeMSG(int, QProcess::ExitStatus);
 
 private slots:
 
@@ -115,6 +117,7 @@ private:
    QProcess KAffeine;
    QProcess WGet1;
    QProcess WGet2;
+   QProcess CUe;
 
 };
 

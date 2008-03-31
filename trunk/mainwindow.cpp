@@ -89,6 +89,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect( &WGet2, SIGNAL( finished(int, QProcess::ExitStatus)), this,SLOT( closeProg() ) );
 
+    connect( &CUe, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT( closeProg() ));
+    connect( &CUe, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(printOutcue(int, QProcess::ExitStatus)));
+
+    connect( &CAt, SIGNAL( finished(int, QProcess::ExitStatus)), this,SLOT( closeProg() ) );
+    connect( &CAt, SIGNAL( finished(int, QProcess::ExitStatus)), this,SLOT( mergeMSG(int, QProcess::ExitStatus) ) );
+
     initial_get_database();
 }
 
