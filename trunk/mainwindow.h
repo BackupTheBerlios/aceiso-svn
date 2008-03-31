@@ -118,7 +118,7 @@ private:
    QProcess WGet1;
    QProcess WGet2;
    QProcess CUe;
-
+   QProcess PLugin;
 };
 
 #endif
