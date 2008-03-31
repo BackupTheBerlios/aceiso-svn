@@ -355,29 +355,44 @@ void MainWindow::pluginsRead(QMenu *pluginsMenu)
 QDir Home = QDir::home();
 	QFile f1(Home.path() + "/.acetoneiso/plugins.conf");
 
-
-
-
 Home.cd(".acetoneiso/plugins");
 QStringList pluginList = Home.entryList(QDir::Files); //dopo metto QDir::Executable
 int s = pluginList.size();
 int n;
 for( n = 0; n < s ; ++n) {
-     QAction *azzAction = pluginsMenu->addAction(pluginList[n]);//, this, SLOT(pluginFunction()));
+     //QAction *azzAction = pluginsMenu->addAction(pluginList[n]);//, this, SLOT(pluginFunction()));
 	f1.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream out(&f1);
 	out << (pluginList[n] + "\n");
-        connect( azzAction, SIGNAL ( triggered() ), this, SLOT (pluginFunction()));
+        //connect( azzAction, SIGNAL ( triggered() ), this, SLOT (pluginFunction()));
    }
+pluginFunction(pluginsMenu);
 }
 
-void MainWindow::pluginFunction()
+void MainWindow::pluginFunction(QMenu *pluginsMenu)
 {
 QDir Home = QDir::home();
 QFile f1(Home.path() + "/.acetoneiso/plugins.conf");
-f1.open(QIODevice::ReadOnly);
-QTextStream in(&f1);
+//f1.open(QIODevice::ReadOnly);
+//QTextStream in(&f1);
+
+     if (!f1.open(QIODevice::ReadOnly | QIODevice::Text))
+         return;
+
+     QTextStream in(&f1);
+     QString line = in.readLine();
+     while (!line.isNull()) {
+         qDebug() << (line);
+//TODO:qui associo la voce del menu con la funzione!!!
+QAction *azzAction = pluginsMenu->addAction(line);
+
+         line = in.readLine();
+
+
+     }
 }
+
+
 
 void MainWindow::about()
 {

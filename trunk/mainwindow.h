@@ -82,7 +82,8 @@ public slots:
    void display_cover();
    void printOutcue(int, QProcess::ExitStatus);
    void mergeMSG(int, QProcess::ExitStatus);
-   void pluginFunction();
+   void pluginFunction(QMenu *pluginsMenu);
+
 
 private slots:
 
