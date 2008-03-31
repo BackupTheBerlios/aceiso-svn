@@ -31,6 +31,8 @@
 #include "sources/a_psxrip.h"
 #include "sources/a_backup_audio.h"
 #include "sources/a_eltorito.h"
+#include "sources/a_getboot.h"
+#include "sources/a_elfloppy.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -76,6 +78,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect( &BAckaudio, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT( closeProg() ));
     connect( &BAckaudio, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(printOutbackaudio(int, QProcess::ExitStatus)));
+
+    connect( &ELtorito, SIGNAL( finished(int, QProcess::ExitStatus)), this,SLOT( closeProg() ) );
 
     initial_get_database();
 }
@@ -180,6 +184,8 @@ void MainWindow::setupMenus()
     connect( psxripAction,     SIGNAL( triggered() ), this, SLOT( psxrip() ) );
     connect( bkaudioAction,     SIGNAL( triggered() ), this, SLOT( backupaudio() ) );
     connect( noemuAction, SIGNAL( triggered() ), this, SLOT( eltorito() ) );
+    connect( extractbootAction, SIGNAL( triggered() ), this, SLOT( getboot() ) );
+    connect( floppyemuAction,   SIGNAL( triggered() ), this, SLOT( elfloppy() ) );
 
 }
 

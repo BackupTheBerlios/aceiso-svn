@@ -73,6 +73,8 @@ void zzofiga();
    void eltorito();
    void printOutpsx(int, QProcess::ExitStatus);
    void printOutbackaudio(int, QProcess::ExitStatus);
+   void getboot();
+   void elfloppy();
 
 private slots:
    // void setCompleted();
@@ -101,6 +103,7 @@ private:
    QProcess UMountcdrom;
    QProcess PSxrip;
    QProcess BAckaudio;
+   QProcess ELtorito;
     //QPixmap puzzleImage;
    // PiecesList *piecesList;
    // PuzzleWidget *puzzleWidget;
