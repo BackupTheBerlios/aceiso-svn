@@ -10,7 +10,6 @@
 #include "sources/progress.h"
 
 
-
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -75,9 +74,16 @@ void zzofiga();
    void printOutbackaudio(int, QProcess::ExitStatus);
    void getboot();
    void elfloppy();
+   void printOutfuseiso(int, QProcess::ExitStatus);
+   void play();
+   void dvdGui(QString &string);
+   void unplay();
+   void get_cover();
+   void readXML();
+   void display_cover();
 
 private slots:
-   // void setCompleted();
+
 void pluginsRead(QMenu *pluginsMenu);
 
 private:
@@ -104,9 +110,12 @@ private:
    QProcess PSxrip;
    QProcess BAckaudio;
    QProcess ELtorito;
-    //QPixmap puzzleImage;
-   // PiecesList *piecesList;
-   // PuzzleWidget *puzzleWidget;
+   QProcess SMplayer;
+   QProcess VLc;
+   QProcess KAffeine;
+   QProcess WGet1;
+   QProcess WGet2;
+
 };
 
 #endif

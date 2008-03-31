@@ -2,6 +2,7 @@
 
 #include <QtGui>
 #include <stdlib.h>
+#include <QtXml>
 
 #include "mainwindow.h"
 #include "sources/a_donate.h"
@@ -33,6 +34,9 @@
 #include "sources/a_eltorito.h"
 #include "sources/a_getboot.h"
 #include "sources/a_elfloppy.h"
+#include "sources/a_play.h"
+#include "sources/a_unplay.h"
+#include "sources/a_dvd_cover.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -80,6 +84,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect( &BAckaudio, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(printOutbackaudio(int, QProcess::ExitStatus)));
 
     connect( &ELtorito, SIGNAL( finished(int, QProcess::ExitStatus)), this,SLOT( closeProg() ) );
+
+    connect( &FUse, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(printOutfuseiso(int, QProcess::ExitStatus)));
+
+    connect( &WGet2, SIGNAL( finished(int, QProcess::ExitStatus)), this,SLOT( closeProg() ) );
 
     initial_get_database();
 }
@@ -301,13 +309,14 @@ frame -> setLayout( verticalLayout );
    connect( umountF, SIGNAL ( clicked() ), this, SLOT ( umount() ) );
    connect( mntWidget, SIGNAL( itemDoubleClicked (QListWidgetItem *) ), this, SLOT(open_mounted(QListWidgetItem *) ) );
 
-   connect( umountdvd, SIGNAL( clicked() ), this, SLOT( progBarra() ) );//TOGLI QUESTA LINEA
-
    connect( setdb, SIGNAL( clicked() ), this, SLOT( database() ));
 
    connect( dbWidget, SIGNAL( itemDoubleClicked (QListWidgetItem *) ), this, SLOT(mdatabase(QListWidgetItem *) ) );
    connect( updb, SIGNAL( clicked() ), this, SLOT( initial_get_database() ) );
    connect( delImage, SIGNAL( clicked() ), this, SLOT( remove_fromDatabase() ) );
+
+   connect( playdvd, SIGNAL( clicked() ), this, SLOT( play() ) );
+   connect( umountdvd, SIGNAL( clicked() ), this, SLOT( unplay() ) );
 }
 
 

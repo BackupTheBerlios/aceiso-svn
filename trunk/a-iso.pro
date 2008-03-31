@@ -18,6 +18,8 @@ FORMS += ui/options.ui \
          ui/about.ui \
          ui/manual.ui
 
+QT += xml
+
 #wince*: {
 #   addFile.sources = example.jpg
 #   addFile.path = .

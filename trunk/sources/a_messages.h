@@ -87,15 +87,15 @@ void MainWindow::printOutgpg(int, QProcess::ExitStatus)
 	QMessageBox::critical(this, "A-ISO","Process Error Code: " + QString::number(valore_uscita) );
 	}
 
-/*
+
 void MainWindow::printOutfuseiso(int, QProcess::ExitStatus)
 	{
 	int valore_uscita = FUse.exitCode();
 	if(!valore_uscita == 0)
 	
-	QMessageBox::critical (this, "AcetoneISO2",tr("Error, could not mount image.\n\nSolution:\na) did you activate fuse? go here and read part c  http://www.acetoneiso.netsons.org/viewpage.php?page_id=4\nb) maybe the image is a multisector image. Try converting it under Convert tab of the main gui." ));
+	QMessageBox::critical (this, "A-ISO",tr("Error, could not mount image.\n\nSolution:\na) did you activate fuse? go here and read part c  http://www.acetoneiso.netsons.org/viewpage.php?page_id=4\nb) maybe the image is a multisector image. Try converting it under Convert tab of the main gui." ));
 	}
-*/
+
 
 void MainWindow::printOutMACIMG(int, QProcess::ExitStatus)
 	{
