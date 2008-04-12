@@ -123,6 +123,9 @@ void MainWindow::setupMenus()
 {
     QMenu *fileMenu = menuBar()->addMenu(tr("&File"));
 
+       QAction *optionsOpen = fileMenu->addAction(tr("Ope&n"));
+       optionsOpen->setShortcut(QKeySequence(tr("Ctrl+N")));
+
        QAction *optionsAction = fileMenu->addAction(tr("&Options"));
        optionsAction->setShortcut(QKeySequence(tr("Ctrl+O")));
 
@@ -200,6 +203,7 @@ void MainWindow::setupMenus()
     connect( noemuAction, SIGNAL( triggered() ), this, SLOT( eltorito() ) );
     connect( extractbootAction, SIGNAL( triggered() ), this, SLOT( getboot() ) );
     connect( floppyemuAction,   SIGNAL( triggered() ), this, SLOT( elfloppy() ) );
+    connect( optionsOpen,       SIGNAL ( triggered() ), this, SLOT ( mount() ) );
 
 }
 
@@ -387,9 +391,9 @@ QFile f1(Home.path() + "/.acetoneiso/plugins.conf");
 QAction *azzAction = pluginsMenu->addAction(line);
 
          line = in.readLine();
+   }
 
-
-     }
+//QAction * QMenu::actionAt ( const QPoint & pt ) const
 }
 
 
