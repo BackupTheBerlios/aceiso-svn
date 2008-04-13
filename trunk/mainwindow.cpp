@@ -129,7 +129,7 @@ void MainWindow::setupMenus()
        QAction *optionsAction = fileMenu->addAction(tr("&Options"));
        optionsAction->setShortcut(QKeySequence(tr("Ctrl+O")));
 
-       QMenu *recentMenu = fileMenu->addMenu(tr("&Recently mounted images"));
+       //QMenu *recentMenu = fileMenu->addMenu(tr("&Recently mounted images"));
        fileMenu->addSeparator();
        QAction *exitAction = fileMenu->addAction(tr("E&xit"));
        exitAction->setShortcut(QKeySequence(tr("Ctrl+Q")));
@@ -168,10 +168,10 @@ void MainWindow::setupMenus()
        QAction *floppyemuAction = eltoritoMenu->addAction(tr("Generic Floppy-Emulation"));
        QAction *noemuAction = eltoritoMenu->addAction(tr("Generic No-Emulation"));
 
-    QMenu *pluginsMenu = menuBar()->addMenu(tr("&Plugins"));
+   /* QMenu *pluginsMenu = menuBar()->addMenu(tr("&Plugins"));
        QAction *managePluginAction = pluginsMenu->addAction(tr("Manage Plugins"));
        pluginsMenu->addSeparator();
-       pluginsRead(pluginsMenu);//TODO: add some function here to add menu items if a plugin is installed.
+       pluginsRead(pluginsMenu);TODO: add some function here to add menu items if a plugin is installed.*/
 
     QMenu *helpMenu = menuBar()->addMenu(tr("&Help"));
        QAction *manualAction = helpMenu->addAction(tr("Manual"));
@@ -225,7 +225,7 @@ QPixmap dvdPixmap( ":/images/play.png" );
 
 QPushButton *mountF = new QPushButton(tr("Mount") );		//funzioni
 QPushButton *umountF = new QPushButton(tr("Umount") );
-QPushButton *donate = new QPushButton(tr("Donate") );
+//QPushButton *donate = new QPushButton(tr("Donate") );
 
 QPushButton *setdb = new QPushButton(tr("Set database") );
 QPushButton *delImage = new QPushButton(tr("Delete image") );
@@ -254,7 +254,7 @@ QHBoxLayout *playLayout = new QHBoxLayout;		//layout dei bottoni del play
 hLayout->addWidget(mountF);
 hLayout->addWidget(umountF);
 hLayout->addStretch(2);
-hLayout->addWidget(donate);
+//hLayout->addWidget(donate);
 frame3->setLayout( hLayout );
 
 //***BOTTONI FUNZIONE DEL DATABASE***//
@@ -314,7 +314,7 @@ frame -> setLayout( verticalLayout );
    connect( PlayAction, SIGNAL ( triggered() ), frame5, SLOT (show()));
    connect( PlayAction, SIGNAL ( triggered() ), dvdLabel, SLOT (show()));
 
-   connect( donate, SIGNAL ( clicked() ), this, SLOT ( a_donate() ) );
+   //connect( donate, SIGNAL ( clicked() ), this, SLOT ( a_donate() ) );
    connect( mountF, SIGNAL ( clicked() ), this, SLOT ( mount() ) );
    connect( umountF, SIGNAL ( clicked() ), this, SLOT ( umount() ) );
    connect( mntWidget, SIGNAL( itemDoubleClicked (QListWidgetItem *) ), this, SLOT(open_mounted(QListWidgetItem *) ) );
@@ -354,47 +354,6 @@ void MainWindow::closeProg()
 prog.close();
 }
 
-void MainWindow::pluginsRead(QMenu *pluginsMenu)
-{
-QDir Home = QDir::home();
-	QFile f1(Home.path() + "/.acetoneiso/plugins.conf");
-
-Home.cd(".acetoneiso/plugins");
-QStringList pluginList = Home.entryList(QDir::Files); //dopo metto QDir::Executable
-int s = pluginList.size();
-int n;
-for( n = 0; n < s ; ++n) {
-     //QAction *azzAction = pluginsMenu->addAction(pluginList[n]);//, this, SLOT(pluginFunction()));
-	f1.open(QIODevice::WriteOnly | QIODevice::Text);
-	QTextStream out(&f1);
-	out << (pluginList[n] + "\n");
-        //connect( azzAction, SIGNAL ( triggered() ), this, SLOT (pluginFunction()));
-   }
-pluginFunction(pluginsMenu);
-}
-
-void MainWindow::pluginFunction(QMenu *pluginsMenu)
-{
-QDir Home = QDir::home();
-QFile f1(Home.path() + "/.acetoneiso/plugins.conf");
-//f1.open(QIODevice::ReadOnly);
-//QTextStream in(&f1);
-
-     if (!f1.open(QIODevice::ReadOnly | QIODevice::Text))
-         return;
-
-     QTextStream in(&f1);
-     QString line = in.readLine();
-     while (!line.isNull()) {
-         qDebug() << (line);
-//TODO:qui associo la voce del menu con la funzione!!!
-QAction *azzAction = pluginsMenu->addAction(line);
-
-         line = in.readLine();
-   }
-
-//QAction * QMenu::actionAt ( const QPoint & pt ) const
-}
 
 
 

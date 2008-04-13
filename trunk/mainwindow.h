@@ -23,7 +23,7 @@ public:
 
 
 public slots:
-    void openImage(const QString &path = QString());
+   void openImage(const QString &path = QString());
    void a_donate();
    void mount();
    void Monta( QString &image, QString &destination );
@@ -82,12 +82,11 @@ public slots:
    void display_cover();
    void printOutcue(int, QProcess::ExitStatus);
    void mergeMSG(int, QProcess::ExitStatus);
-   void pluginFunction(QMenu *pluginsMenu);
 
 
 private slots:
 
-void pluginsRead(QMenu *pluginsMenu);
+//void pluginsRead(QMenu *pluginsMenu);
 
 private:
    void setupMenus();
